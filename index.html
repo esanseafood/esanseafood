@@ -35,7 +35,7 @@
 					<a class="navbar-brand logo_h" href="index.html">
 						<img src="img/logo-2.png" alt="">
 					</a>
-					<a href="#" onclick="setLanguage('en')">English</a> 
+					<a href="#"  onclick="setLanguage('en')">English</a> 
 					<a href="#" onclick="setLanguage('th')">Thai</a>
 					<span> Phone: <a href="tel:+0892442166">089-2442166</a></span> 
 				</div>
@@ -227,9 +227,7 @@
 	<script src="vendors/scroll/jquery.mCustomScrollbar.js"></script>
 	<script src="js/theme.js"></script>
 	<script>
-		
-		$(document).ready(function(){
-			var language; 
+		var language; 
 			function getLanguage() {
 			(localStorage.getItem('language') == null) ? setLanguage('en') : false;
 			$.ajax({ 
@@ -241,6 +239,8 @@
 			function setLanguage(lang) {
 				localStorage.setItem('language', lang);
 			}
+		$(document).ready(function(){
+			
 
 			getLanguage();
     		$('#menu1').text(language.name);
