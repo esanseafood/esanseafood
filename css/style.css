@@ -358,8 +358,8 @@ button:focus {
         color: #222222;
         padding: 0px;
         display: inline-block; }
-        /* .header_area .navbar .nav .nav-item .nav-link:after {
-          display: none; } */
+        .header_area .navbar .nav .nav-item .nav-link:after {
+          display: none; }
       .header_area .navbar .nav .nav-item:hover .nav-link, .header_area .navbar .nav .nav-item.active .nav-link {
         color: #f42f2c !important; }
       .header_area .navbar .nav .nav-item.submenu {
@@ -454,7 +454,7 @@ button:focus {
       display: inline-block; }
     .header_area.navbar_fixed .main_menu .navbar .nav .nav-item .nav-link {
       line-height: 80px;
-      color: #04091e; }
+      color: #ffffff; }
 
 .top_menu {
   background: #ec9d5f; }
