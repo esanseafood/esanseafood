@@ -35,6 +35,8 @@
 					<a class="navbar-brand logo_h" href="index.html">
 						<img src="img/logo-2.png" alt="">
 					</a>
+					<a href="#" onclick="setLanguage('en')">English</a> 
+					<a href="#" onclick="setLanguage('th')">Thai</a>
 					<span> Phone: <a href="tel:+0892442166">089-2442166</a></span>
 				</div>
 			</nav>
@@ -120,7 +122,7 @@
 					<div class="menu_list">
 						<ul class="list">
 							<li>
-								<h4>Wonton with french fries
+								<h4 id="menu1">french fries
 									<span>$5.00</span>
 								</h4>
 								<p>Wonthon/Potato/Fries/Sauce</p>
@@ -224,6 +226,26 @@
 	<script src="vendors/swiper/js/swiper.min.js"></script>
 	<script src="vendors/scroll/jquery.mCustomScrollbar.js"></script>
 	<script src="js/theme.js"></script>
+	<script>
+		
+		$(document).ready(function(){
+			var language; 
+			function getLanguage() {
+			(localStorage.getItem('language') == null) ? setLanguage('en') : false;
+			$.ajax({ 
+			url:  '/language/' +  localStorage.getItem('language') + '.json', 
+			dataType: 'json', async: false, dataType: 'json', 
+			success: function (lang) { language = lang } });
+			}
+			
+			function setLanguage(lang) {
+			localStorage.setItem('language', lang);
+			}
+
+			getLanguage();
+    		$('#menu1').text(language.name);
+    	});
+	</script>
 </body>
 
 </html>
