@@ -51,7 +51,7 @@
 			<div class="row">
 				<div class="col-lg-12">
 					<div class="main_title position-relative">
-						<h1>Recommend Menu</h1>
+						<h1 id="recommend">Recommend Menu</h1>
 						<hr>
 						<div class="round-planet planet">
 							<div class="round-planet planet2">
@@ -244,6 +244,7 @@
 			dataType: 'json', async: false, dataType: 'json', 
 			success: function (lang) { 
 				language = lang 
+				$('#recommend').text(language.recommend);
 				$('#menu1').text(language.name);
 			} });
 			}
