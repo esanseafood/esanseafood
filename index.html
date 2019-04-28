@@ -35,9 +35,9 @@
 					<a class="navbar-brand logo_h" href="index.html">
 						<img src="img/logo-2.png" alt="">
 					</a>
-					<a href="#"  onclick="setLanguage('en')">English</a> 
-					<a href="#" onclick="setLanguage('th')">Thai</a>
-					<span> Phone: <a href="tel:+0892442166">089-2442166</a></span> 
+					<a href="#" id="en">English</a> 
+					<a href="#" id="th">Thai</a>
+					<span> Phone: <a href="tel:0892442166">089-2442166</a></span> 
 				</div>
 			</nav>
 		</div>
@@ -226,24 +226,33 @@
 	<script src="vendors/swiper/js/swiper.min.js"></script>
 	<script src="vendors/scroll/jquery.mCustomScrollbar.js"></script>
 	<script src="js/theme.js"></script>
-	<script>
-		var language; 
+	<script type="text/javascript" >
+		
+		$(document).ready(function(){
+			getLanguage();
+			$("#th").click(function(){
+            	setLanguage('th');
+			});
+			$("#en").click(function(){
+            	setLanguage('en');
+        	});
+			var language; 
 			function getLanguage() {
 			(localStorage.getItem('language') == null) ? setLanguage('en') : false;
 			$.ajax({ 
 			url:  'https://kingboom2499.github.io/Menu.io/language/' +  localStorage.getItem('language') + '.json', 
 			dataType: 'json', async: false, dataType: 'json', 
-			success: function (lang) { language = lang } });
+			success: function (lang) { 
+				language = lang 
+				$('#menu1').text(language.name);
+			} });
 			}
-			
 			function setLanguage(lang) {
 				localStorage.setItem('language', lang);
+				getLanguage();
 			}
-		$(document).ready(function(){
 			
-
-			getLanguage();
-    		$('#menu1').text(language.name);
+    		
     	});
 	</script>
 </body>
