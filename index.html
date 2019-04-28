@@ -227,9 +227,7 @@
 	<script src="vendors/scroll/jquery.mCustomScrollbar.js"></script>
 	<script src="js/theme.js"></script>
 	<script>
-		function setLanguage(lang) {
-			localStorage.setItem('language', lang);
-		}
+		
 		$(document).ready(function(){
 			var language; 
 			function getLanguage() {
@@ -240,7 +238,9 @@
 			success: function (lang) { language = lang } });
 			}
 			
-
+			function setLanguage(lang) {
+				localStorage.setItem('language', lang);
+			}
 
 			getLanguage();
     		$('#menu1').text(language.name);
