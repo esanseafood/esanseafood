@@ -1,5 +1,8 @@
 { 
     "recommend":"Recommend Menu",
     "currency":"Baht",
-    "menu1": "Bread Fruit Cheese Sandwich"
+    "menu1": {
+        "name":"Bread Fruit Cheese Sandwich",
+        "detail":"Bread Fruit Cheese Sandwich"
+    }
 }
