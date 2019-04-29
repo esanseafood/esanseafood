@@ -229,7 +229,8 @@
 	<script type="text/javascript" >
 		
 		$(document).ready(function(){
-			getLanguage();
+			getLanguage('th');
+
 			$("#th").click(function(){
             	setLanguage('th');
 			});
@@ -238,16 +239,15 @@
         	});
 			var language; 
 			function getLanguage() {
-			(localStorage.getItem('language') == null) ? setLanguage('en') : false;
-			$.ajax({ 
-			url:  'https://kingboom2499.github.io/Menu.io/language/' +  localStorage.getItem('language') + '.json', 
-			dataType: 'json', async: false, dataType: 'json', 
-			success: function (lang) { 
-				language = lang 
-				$('#recommend').text(language.recommend);
-				$('.currency').text(language.currency);
-				$('#menu1').text(language.menu1.name);
-			} });
+				$.ajax({ 
+				url:  'https://kingboom2499.github.io/Menu.io/language/' +  localStorage.getItem('language') + '.json', 
+				dataType: 'json', async: false, dataType: 'json', 
+				success: function (lang) { 
+					language = lang 
+					$('#recommend').text(language.recommend);
+					$('.currency').text(language.currency);
+					$('#menu1').text(language.menu1.name);
+				} });
 			}
 			function setLanguage(lang) {
 				localStorage.setItem('language', lang);
