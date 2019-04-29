@@ -67,11 +67,11 @@
 					<div class="thumb">
 						<img class="img-fluid" src="img/dish/d1.jpg" alt="">
 					</div>
-					<h4>Bread Fruit Cheese Sandwich</h4>
+					<h4 id="menu1">Bread Fruit Cheese Sandwich</h4>
 					<p>
 						Bread/Potato/Cheese
 					</p>
-					<h5 class="price">$5.59</h5>
+					<h5 class="price">5.59</h5><h5 class="price currency">Baht</h5>
 				</div>
 
 				<div class="single_dish col-lg-4 col-md-6 text-center">
@@ -122,7 +122,7 @@
 					<div class="menu_list">
 						<ul class="list">
 							<li>
-								<h4 id="menu1">french fries
+								<h4>french fries
 									<span>$5.00</span>
 								</h4>
 								<p>Wonthon/Potato/Fries/Sauce</p>
@@ -245,7 +245,8 @@
 			success: function (lang) { 
 				language = lang 
 				$('#recommend').text(language.recommend);
-				$('#menu1').text(language.name);
+				$('#menu1').text(language.menu1);
+				$('.currency').text(language.currency);
 			} });
 			}
 			function setLanguage(lang) {
